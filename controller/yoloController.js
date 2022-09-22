@@ -18,8 +18,7 @@ exports.getMsg = async(req, res) => {
         const msg = req.body.image
         //console.log(req.image)
 
-        console.log(process.cwd() + '/scriptYolo.py')
-        const pythonScript = await spawn('python', [process.cwd() + '/scriptYolo.py'])
+        const pythonScript = await spawn('python', ['scriptYolo.py'])
         //console.log(pythonScript.toString())
         res.json({
                 imagesYolo: pythonScript.toString()
